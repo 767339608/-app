@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览。-->
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <!--避免IE使用兼容模式-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--优先使用 IE 最新版本和 Chrome:-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--WebApp全屏模式   隐藏地址栏。-->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!--禁止百度转码显示。-->
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <!--忽略页面中的数字识别为电话，忽略email识别：-->
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <title>title</title>
+  <link rel="stylesheet" href="../static/css/reset.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <!--设置rem-->
+  <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        // orientationchange 事件是在用户水平或者垂直翻转设备（即方向发生变化）时触发的事件。
+        // onresize 事件会在窗口或框架被调整大小时发生。
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          window.clientWidth = docEl.clientWidth;
+          if (!window.clientWidth) return;
+          docEl.style.fontSize = 50 * (window.clientWidth / 375) + 'px';
+          window.base = 50 * (window.clientWidth / 375);
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <!--<script>-->
+  <!--function refresh() {-->
+  <!--var deviceWidth = document.documentElement.clientWidth;//移动端的浏览器视口的宽度 pc端用的是coffsetWidth;-->
+  <!--if (deviceWidth > 1080) {-->
+  <!--document.documentElement.style.fontSize = 1080 / 10.8 + "px";-->
+  <!--} else {-->
+  <!--document.documentElement.style.fontSize = deviceWidth / 7.5 + "px";-->
+  <!--}-->
+  <!--}-->
+  <!--refresh();-->
+  <!---->
+  <!--</script>-->
+</head>
+
+<body>
+  <section>
+    <h1>选择星座</h1>
+    <ul>
+      <li>
+        <img src="static/img/白羊.png" alt="">
+        <span class='title'>白羊座</span><span>Aries</span><span>(3.21-4.19)</span>
+      </li>
+      <li><img src="static/img/金牛.png" alt="">
+        <span class='title'>金牛座</span><span>Taurus</span><span>(4.20-5.20)</span>
+      </li>
+      <li><img src="static/img/双子.png" alt="">
+        <span class='title'>双子座</span><span>Gemini</span><span>(5.21-6.21)</span>
+      </li>
+      <li><img src="static/img/巨蟹.png" alt="">
+        <span class='title'>巨蟹座</span><span>Kingcrab</span><span>(6.22-7.22)</span>
+      </li>
+      <li><img src="static/img/狮子.png" alt="">
+        <span class='title'>狮子座</span><span>Leo</span><span>(7.23-8.22)</span>
+      </li>
+      <li><img src="static/img/处女.png" alt="">
+        <span class='title'>处女座</span><span>Virgo</span><span>(8.23-9.22)</span>
+      </li>
+      <li><img src="static/img/天秤.png" alt="">
+        <span class='title'>天秤座</span><span>Libra</span><span>(9.23-10.23)</span>
+      </li>
+      <li><img src="static/img/天蝎.png" alt="">
+        <span class='title'>天蝎座</span><span>Scorpio</span><span>(10.24-11.22)</span>
+      </li>
+      <li><img src="static/img/射手.png" alt="">
+        <span class='title'>射手座</span><span>Sagittarius</span><span>(11.23-12.21)</span>
+      </li>
+      <li><img src="static/img/摩羯.png" alt="">
+        <span class='title'>摩羯座</span><span>Capricomus</span><span>(12.22-1.19)</span>
+      </li>
+      <li><img src="static/img/水瓶.png" alt="">
+        <span class='title'>水瓶座</span><span>Aquarius</span><span>(1.20-2.18)</span>
+      </li>
+      <li><img src="static/img/双鱼.png" alt="">
+        <span class='title'>双鱼座</span><span>Pisces</span><span>(2.19-3.20)</span>
+      </li>
+    </ul>
+    <figure>
+      <img src="static/img/叉号.png" alt="">
+    </figure>
+  </section>
+</body>
+<script src="static/js/index.js"></script>
+
+</html>
