@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览。-->
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <!--避免IE使用兼容模式-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--优先使用 IE 最新版本和 Chrome:-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--WebApp全屏模式   隐藏地址栏。-->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!--禁止百度转码显示。-->
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <!--忽略页面中的数字识别为电话，忽略email识别：-->
+  <meta name="format-detection" content="telphone=no, email=no" />
+  <title>title</title>
+  <link rel="stylesheet" href="static/css/reset.css">
+  <!--设置rem-->
+  <script src="static/js/jquery-1.11.1.min.js"></script>
+  <script src='static/js/jquery.mobile-1.4.5.min.js'></script>
+  <script type="text/javascript">
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        // orientationchange 事件是在用户水平或者垂直翻转设备（即方向发生变化）时触发的事件。
+        // onresize 事件会在窗口或框架被调整大小时发生。
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          window.clientWidth = docEl.clientWidth;
+          if (!window.clientWidth) return;
+          docEl.style.fontSize = 50 * (window.clientWidth / 375) + 'px';
+          window.base = 50 * (window.clientWidth / 375);
+        };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+  <link rel="stylesheet" href="static/css/banli.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <article>
+    <figure class='cut'><img src="static/img/图层-5.png" alt=""></figure>
+    <h1>星座伴侣</h1>
+    <figure class='title'>
+      <img src="static/img/图层-4.png" alt="">
+      <h2>白羊座 (Aries)</h2>
+      <span>3.21-4.19</span>
+    </figure>
+    <ul class='table'>
+      <li><span>今日</span></li>
+      <li><span>明日</span></li>
+      <li><span>本周</span></li>
+      <li><span>下周</span></li>
+      <li><span>本月</span></li>
+      <li><span>本年</span></li>
+    </ul>
+    <div class="constellation">
+      <!-- 今日 -->
+      <main class='today'>
+        <!-- 综合指数 -->
+        <ul class="composite-index">
+          <li><span>综合指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>健康指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-10.png" alt=""></li>
+          <li><span>爱情指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>财运指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-10.png" alt=""></li>
+          <li><span>工作指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>速配星座：</span><span>处女座</span></li>
+          <li><span>幸运颜色：</span><span>古铜色</span></li>
+          <li><span>幸运数字：</span><span>9</span></li>
+        </ul>
+        <section class="year-title">
+          <h2>今日概述</h2>
+          <span>有些思考的小漩涡，肯让你忽然的放开，生活中许多细节让你感触良多，五位杂陈，常常有时候就慢动作定个，想法在某处冻结停留，陷入一阵自我对话的沉思之中，这个时候你不不喜欢被打扰或询问，也不想让某些曝光，个性变得有些隐晦。</span>
+        </section>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>综合运势</h2>
+              <span>开始新年新的工作，不要继续沉浸在节日的欢乐当中，感觉回归吧！一天都不算太忙，现在只是工作的准备阶段。爱情是需要争取的，空想而不行动也是徒劳的。有获得赚钱的好机会，若能抓住必有收获。</span>
+            </li>
+        </div>
+      </main>
+      <!-- 明日 -->
+      <main class='tomorrow' style='display: none'>
+        <ul class="composite-index">
+          <li><span>综合指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>健康指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-10.png" alt=""></li>
+          <li><span>爱情指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>财运指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-10.png" alt=""></li>
+          <li><span>工作指数：</span>
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-2.png" alt="">
+            <img src="static/img/星星-拷贝-4.png" alt=""></li>
+          <li><span>速配星座：</span><span>处女座</span></li>
+          <li><span>幸运颜色：</span><span>古铜色</span></li>
+          <li><span>幸运数字：</span><span>9</span></li>
+        </ul>
+        <section class="year-title">
+          <h2>今日概述</h2>
+          <span>有些思考的小漩涡，肯让你忽然的放开，生活中许多细节让你感触良多，五位杂陈，常常有时候就慢动作定个，想法在某处冻结停留，陷入一阵自我对话的沉思之中，这个时候你不不喜欢被打扰或询问，也不想让某些曝光，个性变得有些隐晦。</span>
+        </section>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>综合运势</h2>
+              <span>开始新年新的工作，不要继续沉浸在节日的欢乐当中，感觉回归吧！一天都不算太忙，现在只是工作的准备阶段。爱情是需要争取的，空想而不行动也是徒劳的。有获得赚钱的好机会，若能抓住必有收获。</span>
+            </li>
+        </div>
+      </main>
+      <!-- 本周 -->
+      <main class='week' style='display: none'>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>健康</h2>
+              <span>内心有焦虑，单身体拒绝劳求舒适，容易有胃部不适。</span>
+            </li>
+            <li>
+              <h2>求职</h2>
+              <span>虽有新想法，但心态求稳当，容易低就。但较有可能从家人处获得机会。</span>
+            </li>
+            <li>
+              <h2>恋情</h2>
+              <span>是有自己的理财想法，但一直担心是否执行，比较纠结。但是短期的投资会受到一笔客观的收入，建议见好就收，一些人的金钱的得失不大。</span>
+            </li>
+            <li>
+              <h2>财运</h2>
+              <span>之前累积的想法和感受，本周选择说出来，沟通机会增多，亦有可能以争吵的方式出现。单身的，在聚会闲谈中可以获得更多缘分。</span>
+            </li>
+            <li>
+              <h2>工作</h2>
+              <span>水泥在本周结束，之前耽误，错过的出现弥补机会。职场今日休整状态，又掉部门或岗位的可能。</span>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <!-- 下周 -->
+      <main class='nextweek' style='display: none'>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>健康</h2>
+              <span>内心有焦虑，单身体拒绝劳求舒适，容易有胃部不适。</span>
+            </li>
+            <li>
+              <h2>求职</h2>
+              <span>虽有新想法，但心态求稳当，容易低就。但较有可能从家人处获得机会。</span>
+            </li>
+            <li>
+              <h2>恋情</h2>
+              <span>是有自己的理财想法，但一直担心是否执行，比较纠结。但是短期的投资会受到一笔客观的收入，建议见好就收，一些人的金钱的得失不大。</span>
+            </li>
+            <li>
+              <h2>财运</h2>
+              <span>之前累积的想法和感受，本周选择说出来，沟通机会增多，亦有可能以争吵的方式出现。单身的，在聚会闲谈中可以获得更多缘分。</span>
+            </li>
+            <li>
+              <h2>工作</h2>
+              <span>水泥在本周结束，之前耽误，错过的出现弥补机会。职场今日休整状态，又掉部门或岗位的可能。</span>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <!-- 本月 -->
+      <main class='monthmain' style='display: none'>
+        <section class="year-title">
+          <h2>综合运势</h2>
+          <span>本月运势有两个重要的节点。一个是在上旬，水星今日事业宫，更加关注事业反正，目标性加群；而金星随之离开事业宫，原先的事业不能为你赢得加分，反而是在人脉上。</span>
+        </section>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>健康运势</h2>
+              <span>上旬和中旬，运输能量高。适合开展锻炼计划,尤其是年里上的锻炼。下旬，水逆开启,出门</span>
+            </li>
+            <li>
+              <h2>爱情运势</h2>
+              <span>在新的一年，有伴者感情变淡或有破裂，两人想法存在差异。部分人会有出轨行为；单身者对爱情没太多期待，或是保持着游戏态度，而且没什么主动性。</span>
+            </li>
+            <li>
+              <h2>财运运势</h2>
+              <span>财运方面，今年会有不少的求财小渠道出现，可也需要承担较大的风险，不建议与人合伙做生意。在做任何的投资理财项目之前，都要做好事前的预测评估。</span>
+            </li>
+            <li>
+              <h2>工作运势</h2>
+              <span>财运方面，今年会有不少的求财小渠道出现，可也需要承担较大的风险，不建议与人合伙做生意。在做任何的投资理财项目之前，都要做好事前的预测评估。</span>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <!-- 本年 -->
+      <main class='month' style='display: none'>
+        <section class="year-title">
+          <h2>年度密码</h2>
+          <span>变身完成的调整之年</span>
+          <h2>年度说明</h2>
+          <span>"进入新的一年2019年，白羊座的整体运势尚算稳定的，有不错的贵人运。</span>
+        </section>
+        <div class="year-main">
+          <ul>
+            <li>
+              <h2>事业运</h2>
+              <span>上年事业起伏不定，变动较大，在2019年，会逐渐变好，发展机会较多，上半年会特别旺盛一点，充满干劲。本年的事业基本都有提升，但同时压力很大，随时都要打醒十二分精神。</span>
+            </li>
+            <li>
+              <h2>爱情运</h2>
+              <span>在新的一年，有伴者感情变淡或有破裂，两人想法存在差异。部分人会有出轨行为；单身者对爱情没太多期待，或是保持着游戏态度，而且没什么主动性。</span>
+            </li>
+            <li>
+              <h2>财运</h2>
+              <span>财运方面，今年会有不少的求财小渠道出现，可也需要承担较大的风险，不建议与人合伙做生意。在做任何的投资理财项目之前，都要做好事前的预测评估。</span>
+            </li>
+            <li>
+              <h2>工作运势</h2>
+              <span>财运方面，今年会有不少的求财小渠道出现，可也需要承担较大的风险，不建议与人合伙做生意。在做任何的投资理财项目之前，都要做好事前的预测评估。</span>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <ul>
+        <li><img src="static/img/首页.png" alt=""><span>首页</span></li>
+        <li><img src="static/img/头条-(2).png" alt=""><span>头条</span></li>
+      </ul>
+    </footer>
+  </article>
+</body>
+<script src='static/js/banli.js'></script>
+
+</html>

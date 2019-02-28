@@ -1,24 +1,17 @@
 function main () {
   $('ul').click(function (ev) {
-
     if (ev.target.nodeName == 'IMG') {
+      // location.href = 'banli.html';
       let starttext = $(ev.target).next().text();
-      $.ajax({
-        type: 'GET',
-        url: 'http://web.juhe.cn:8080/constellation/getAll',
-        data: 'consName=' + starttext + '&type=today&key=003e5a9a6410ed1fe85dd37b1e357a8d',
-        dataType: 'jsonp',
-        headers: {
-          Accept: "application/json; charset=utf-8"
-        },
-        jsonpCallback: "method",
-        success: function (msg) {
-          console.log(msg, '跨域成功')
-        },
-        error: function (err) {
-          console.log(err, '跨域失败')
-        }
+      let today;
+      $.get('http://172.18.1.171:8000/uploadimg/start', { consName: starttext, type: 'today', key: '003e5a9a6410ed1fe85dd37b1e357a8d' }, function (today) {
+        today = today;
       })
+      console.log(today)
+      $.get('http://172.18.1.171:8000/uploadimg/start', { consName: starttext, type: 'tomorrow', key: '003e5a9a6410ed1fe85dd37b1e357a8d' })
+      $.get('http://172.18.1.171:8000/uploadimg/start', { consName: starttext, type: 'week', key: '003e5a9a6410ed1fe85dd37b1e357a8d' })
+      $.get('http://172.18.1.171:8000/uploadimg/start', { consName: starttext, type: 'month', key: '003e5a9a6410ed1fe85dd37b1e357a8d' })
+      $.get('http://172.18.1.171:8000/uploadimg/start', { consName: starttext, type: 'year', key: '003e5a9a6410ed1fe85dd37b1e357a8d' })
     }
   })
 }
