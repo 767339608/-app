@@ -1,9 +1,41 @@
+let start = decodeURIComponent(location.search.slice(1))
+let index = 0;
+let arrcom = ['.today', '.tomorrow', '.week', '.nextweek', '.monthmain', '.month']
+let colorall = {
+  '红色': "red",
+  '绿色': 'green',
+  '黑色': 'black',
+  '古铜色': "bronze"
+}
+function createstart (num) {
+  let num1 = num * 5;
+  let chagenum = 1;
+  let img = "";
+  if (Math.floor(num1) == num1) {
+    chagenum = 0;
+  }
+  for (let i = 0; i < Math.floor(num1); i++) {
+    img += `<img alt src='static/img/星星-拷贝-2.png'>`
+  }
+
+}
+$.get('http://172.18.1.171:8000/uploadimg/start?consName=' + start + '&type=today&key=003e5a9a6410ed1fe85dd37b1e357a8d', function (today) {
+  let todayjson = JSON.parse(today);
+  $('.title h2').text(todayjson.name);
+
+  $('.composite-index li:nth-of-type(6) span:nth-of-type(2)').text(todayjson.QFriend);
+  $('.composite-index li:nth-of-type(6) span:nth-of-type(2)').text(todayjson.QFriend);
+  $('.composite-index li:nth-of-type(7) span:nth-of-type(2)').text(todayjson.color);
+  $('.composite-index li:nth-of-type(7) span:nth-of-type(2)').css({ color: colorall[todayjson.color] });
+  $('.composite-index li:nth-of-type(8) span:nth-of-type(2)').text(todayjson.number);
+  $('.year-title span').text(today.summary);
+  console.log(todayjson)
+})
 let cut = document.querySelector('.cut');
 cut.onclick = function () {
   location.href = '../index.html';
 }
-let index = 0;
-let arrcom = ['.today', '.tomorrow', '.week', '.nextweek', '.monthmain', '.month']
+
 $('.table li').eq(index).children(1).addClass("chagespan");
 //点击事件
 $('.table li span').click(function () {
@@ -49,9 +81,9 @@ $('.constellation').on('swipeleft', function () {
     $(arrcom[indexcom]).css({ float: 'right' });
     $('.constellation').css({ transition: "transform 0.4s", transform: 'translateX(' + -50 + '%)' })
     setTimeout(function () {
-      $(arrcom[indexcom]).css({ display: 'none', float: '' })
       $('.constellation').css({ transform: '', transition: "" })
-    }, 400);
+      $(arrcom[indexcom]).css({ display: 'none', float: '' })
+    }, 300);
   }
   $('.table li').eq(index).children(1).addClass("chagespan");
   $(arrcom[index]).css({ display: 'block' })
@@ -77,3 +109,5 @@ $('.constellation').on('swiperight', function () {
   $(arrcom[index]).css({ display: 'block' })
 
 })
+
+
