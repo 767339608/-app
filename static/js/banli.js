@@ -7,8 +7,10 @@ let colorall = {
   '黑色': 'black',
   '古铜色': "bronze"
 }
-function createstart (num) {
+function createstart (string) {
+  num = parseInt(string) / 100;
   let num1 = num * 5;
+  console.log(num1)
   let chagenum = 1;
   let img = "";
   if (Math.floor(num1) == num1) {
@@ -17,12 +19,22 @@ function createstart (num) {
   for (let i = 0; i < Math.floor(num1); i++) {
     img += `<img alt src='static/img/星星-拷贝-2.png'>`
   }
-
+  if (chagenum == 0) {
+    img += `<img alt src='static/img/星星-拷贝-10.png'>`
+    for (let i = 0; i < num - Math.floor(num1) - 1; i++) {
+      img += `<img alt src='static/img/星星-拷贝-4.png'>`
+    }
+  } else {
+    for (let i = 0; i < num - Math.floor(num1); i++) {
+      img += `<img alt src='static/img/星星-拷贝-4.png'>`
+    }
+  }
+  return img;
 }
 $.get('http://172.18.1.171:8000/uploadimg/start?consName=' + start + '&type=today&key=003e5a9a6410ed1fe85dd37b1e357a8d', function (today) {
   let todayjson = JSON.parse(today);
   $('.title h2').text(todayjson.name);
-
+  $('.composite-index li:nth-of-type(5)').html('<span>工作指数</span>' + createstart(todayjson.all));
   $('.composite-index li:nth-of-type(6) span:nth-of-type(2)').text(todayjson.QFriend);
   $('.composite-index li:nth-of-type(6) span:nth-of-type(2)').text(todayjson.QFriend);
   $('.composite-index li:nth-of-type(7) span:nth-of-type(2)').text(todayjson.color);
