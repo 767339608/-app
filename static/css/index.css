@@ -46,3 +46,11 @@ figure {
 figure img {
   width: 32.5px;
 }
+.background {
+  position: fixed;
+  bottom: 0;
+  background-image: url(../img/启动页2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+}
